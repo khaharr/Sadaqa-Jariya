@@ -155,7 +155,7 @@ npm run dev
 
 ### 5️⃣ Déployer
 
-* Lier ton repo GitHub à **Vercel** ou **Netlify**
+* Lier repo GitHub à **Vercel** ou **Netlify**
 * Variables d’environnement identiques à `.env`
 
 ---
