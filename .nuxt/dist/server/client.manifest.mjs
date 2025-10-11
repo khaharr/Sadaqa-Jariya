@@ -1,1 +1,1 @@
-export { default } from "file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///C:/Users/moham/Documents/chamseddine/Projet/chems%20khalid%20saadaqa/Sadaqa-Jariya/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
