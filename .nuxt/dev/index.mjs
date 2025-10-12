@@ -5,6 +5,7 @@ import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/@vue/shared/dist/shared.cjs.js';
+import { PrismaClient } from 'file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/@prisma/client/default.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///home/kharrari01/Documents/Sadaqa-Jariya/node_modules/destr/dist/index.mjs';
@@ -646,7 +647,12 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {
+    "prisma": {
+      "log": [],
+      "errorFormat": "pretty"
+    }
+  }
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1119,7 +1125,22 @@ const plugins = [
 _2JTuF9ezD_7J3kAyt0rwEu5Nehsmrby6sJY7iSGSm7c
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"12c7b-VSjDfmor1JQjDFFeZkQbCs1cCW8\"",
+    "mtime": "2025-10-12T15:16:23.452Z",
+    "size": 76923,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"46e52-WTKYwD+ryJzs5SrW0JObbsnMzCg\"",
+    "mtime": "2025-10-12T15:16:23.453Z",
+    "size": 290386,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -1532,10 +1553,12 @@ async function getIslandContext(event) {
   return ctx;
 }
 
+const _lazy_FPpeQM = () => Promise.resolve().then(function () { return cagnottes_get$1; });
 const _lazy__vCIKh = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _QoP9i5, lazy: false, middleware: true, method: undefined },
+  { route: '/api/cagnottes', handler: _lazy_FPpeQM, lazy: true, middleware: false, method: "get" },
   { route: '/__nuxt_error', handler: _lazy__vCIKh, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy__vCIKh, lazy: true, middleware: false, method: undefined }
@@ -1867,6 +1890,36 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+var _a;
+const prismaClientSingleton = () => {
+  return new PrismaClient();
+};
+const prisma = (_a = globalThis.prismaGlobal) != null ? _a : prismaClientSingleton();
+globalThis.prismaGlobal = prisma;
+
+const cagnottes_get = defineEventHandler(async (event) => {
+  try {
+    console.log("\u{1F50D} R\xE9cup\xE9ration des cagnottes...");
+    const cagnottes = await prisma.cagnottes.findMany({
+      orderBy: { created_at: "desc" }
+    });
+    console.log("\u{1F4E6} Donn\xE9es r\xE9cup\xE9r\xE9es:", JSON.stringify(cagnottes, null, 2));
+    console.log("\u{1F522} Nombre de cagnottes:", cagnottes.length);
+    return cagnottes;
+  } catch (error) {
+    console.error("\u274C Erreur Prisma:", error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: "Erreur lors de la r\xE9cup\xE9ration des cagnottes"
+    });
+  }
+});
+
+const cagnottes_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: cagnottes_get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {
