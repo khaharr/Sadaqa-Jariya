@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   try {
     console.log('🔍 Récupération des cagnottes...')
     
-    const cagnottes = await prisma.cagnottes.findMany({
+    const cagnottes = await prisma.cagnotte.findMany({
       orderBy: { created_at: 'desc' },
     })
     

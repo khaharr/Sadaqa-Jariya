@@ -1125,22 +1125,7 @@ const plugins = [
 _2JTuF9ezD_7J3kAyt0rwEu5Nehsmrby6sJY7iSGSm7c
 ];
 
-const assets = {
-  "/index.mjs": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"12c7b-VSjDfmor1JQjDFFeZkQbCs1cCW8\"",
-    "mtime": "2025-10-12T15:16:23.452Z",
-    "size": 76923,
-    "path": "index.mjs"
-  },
-  "/index.mjs.map": {
-    "type": "application/json",
-    "etag": "\"46e52-WTKYwD+ryJzs5SrW0JObbsnMzCg\"",
-    "mtime": "2025-10-12T15:16:23.453Z",
-    "size": 290386,
-    "path": "index.mjs.map"
-  }
-};
+const assets = {};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -1902,7 +1887,7 @@ globalThis.prismaGlobal = prisma;
 const cagnottes_get = defineEventHandler(async (event) => {
   try {
     console.log("\u{1F50D} R\xE9cup\xE9ration des cagnottes...");
-    const cagnottes = await prisma.cagnottes.findMany({
+    const cagnottes = await prisma.cagnotte.findMany({
       orderBy: { created_at: "desc" }
     });
     console.log("\u{1F4E6} Donn\xE9es r\xE9cup\xE9r\xE9es:", JSON.stringify(cagnottes, null, 2));
