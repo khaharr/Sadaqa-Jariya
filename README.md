@@ -180,4 +180,4 @@ MIT — projet open-source à but non lucratif, destiné à faciliter la diffusi
 
 ### ✨ Auteur
 
-Projet initial par [ton nom ou pseudo] — conçu pour aider la communauté à centraliser les dons en toute transparence.
+Projet initial par [c k — conçu pour aider la communauté à centraliser les dons en toute transparence.
