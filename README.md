@@ -11,7 +11,7 @@ Un site web moderne listant et centralisant des **cagnottes islamiques** (aide, 
 
 ### 🔹 **Frontend**
 
-* **Framework :** Vue.js 3 (ou Nuxt 3 pour le SEO et le SSR)
+* **Framework :** NUXT
 * **Build Tool :** Vite ⚡ (rapide et moderne)
 * **Style :** Tailwind CSS + Framer Motion (via Motion One pour les animations Vue)
 * **UI Components :** shadcn-vue ou Vuetify (selon préférence)
@@ -22,7 +22,7 @@ Un site web moderne listant et centralisant des **cagnottes islamiques** (aide, 
 * **Supabase (PostgreSQL)**
   Fournit :
 
-  * Base de données relationnelle
+  * PRISMA
   * Authentification (admin + utilisateur)
   * API REST auto-générée
   * Stockage d’images / fichiers (preuves, visuels)
